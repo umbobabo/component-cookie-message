@@ -1,5 +1,6 @@
 import React from 'react';
 import CookieMessage from '../index.es6';
+import reactCookie from 'react-cookie';
 import { stub, spy } from 'sinon';
 
 describe('Teaser component', () => {
@@ -12,30 +13,35 @@ describe('Teaser component', () => {
     ).should.equal(true);
   });
   describe('cookie', () => {
-    function renderCookieMessage(cookieStub) {
+    function renderCookieMessage(reactCookieInstance) {
       return React.renderToString(
-        <CookieMessage cookieStub={cookieStub}/>
+        <CookieMessage reactCookieInstance={reactCookieInstance}/>
       );
     }
     const cookieName = 'ec_cookie_message_0';
-    let cookie = {};
+    let cookie = null;
     beforeEach(() => {
-      cookie = {
-        load: stub(),
-        save: spy(),
-      };
+      cookie = Object.create(reactCookie);
     });
-    it('is set on first load', () => {
+    afterEach(() => {
+      /* eslint-disable brace-style */
+      if (cookie.load.restore) { cookie.load.restore(); }
+      if (cookie.save.restore) { cookie.save.restore(); }
+    });
+    it('is set if no cookie present', () => {
+      stub(cookie, 'load').returns(false);
+      spy(cookie, 'save');
       renderCookieMessage(cookie);
-      cookie.load.calledWith(cookieName).should.equal(true);
+      cookie.save.calledWith(cookieName).should.equal(true);
     });
     it('is not set if it exists', () => {
-      cookie.load = stub().returns(true);
+      stub(cookie, 'load').returns(true);
+      spy(cookie, 'save');
       renderCookieMessage(cookie);
       cookie.save.called.should.equal(false);
     });
     it('does not return a message if the cookie exists', () => {
-      cookie.load = stub().returns(true);
+      stub(cookie, 'load').returns(true);
       const cookieMessageRenderedString = renderCookieMessage(cookie);
       cookieMessageRenderedString.should.contain('<noscript');
       cookieMessageRenderedString.should.not.contain('cookie');
