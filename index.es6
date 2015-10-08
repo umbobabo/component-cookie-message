@@ -1,7 +1,7 @@
 /* global window */
 import React from 'react';
 import reactCookie from 'react-cookie';
-// import Icon from '@economist/component-icon';
+import Icon from '@economist/component-icon';
 
 export default class CookieMessage extends React.Component {
   static get propTypes() {
@@ -42,12 +42,31 @@ export default class CookieMessage extends React.Component {
       return false;
     }
 
+    const policyLink = (
+      <a href="//www.economist.com/cookies-info"
+        className="cookie-message--link cookie-message--link__policy"
+      >
+        cookies policy
+      </a>
+    );
+    const preferencesLink = (
+      <a href="#"
+        className="cookie-message--link cookie-message--link__preferences"
+      >
+        cookies preferences
+      </a>
+    );
     return (
       <div className="cookie-message">
-        By continuing to browse this site you are agreeing to our use of cookies.
-        Review our <a href="//www.economist.com/cookies-info">cookies
-        policy</a> for details or change your <a href="#">cookies preferences</a>.
-        <span onClick={() => this.onCloseClick()}>X</span>
+        <div className="cookie-message--message-container">
+          <span onClick={() => this.onCloseClick()}
+            className="cookie-message--close-wrapper"
+          >
+            <Icon icon="close" className="cookie-message--close" />
+          </span>
+          By continuing to browse this site you are agreeing to our use of cookies.
+          Review our <br/>{policyLink} for details or change your {preferencesLink}.
+        </div>
       </div>
     );
   }
