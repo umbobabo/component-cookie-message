@@ -1,4 +1,4 @@
-/* global window */
+/* global window document */
 import React from 'react';
 import reactCookie from 'react-cookie';
 import Icon from '@economist/component-icon';
@@ -25,13 +25,22 @@ export default class CookieMessage extends React.Component {
     const isCookieMessageRequired = !cookie.load(this.props.cookieName);
     this.setState({ isCookieMessageRequired });
     if (isCookieMessageRequired) {
-      const isHttps = window.location.href.substr(0, 5) === 'https';
+      const isHttps = window.location.protocol === 'https:';
       const cookieOptions = {
         expires: new Date('01-01-2040'),
         secure: isHttps,
         httpOnly: false,
       };
       cookie.save(this.props.cookieName, '1', cookieOptions);
+    }
+  }
+  componentDidMount() {
+    if (typeof window !== 'undefined' && window.document) {
+      const trusteScript = document.createElement('script');
+      trusteScript.async = true;
+      trusteScript.type = 'text/javascript';
+      trusteScript.src = '//consent.truste.com/notice?domain=economist.com&c=teconsent-preferences&text=true';
+      document.head.appendChild(trusteScript);
     }
   }
   onCloseClick() {
@@ -50,11 +59,16 @@ export default class CookieMessage extends React.Component {
       </a>
     );
     const preferencesLink = (
-      <a href="#"
-        className="cookie-message--link cookie-message--link__preferences"
+      <span id="teconsent-preferences"
+        className="cookie-message--link__preferences cookie-message--link"
       >
-        cookies preferences
-      </a>
+        <a href="http://www.allaboutcookies.org/manage-cookies/"
+          className="cookie-message--link
+          cookie-message__link--temporary-cookie-preferences"
+        >
+          Cookie preferences
+        </a>
+      </span>
     );
     return (
       <div className="cookie-message">
