@@ -1,5 +1,5 @@
 {
-  "name": "component-cookie-message",
+  "name": "@economist/component-cookie-message",
   "version": "1.0.0",
   "description": "Reusable cookie message component",
   "author": "The Economist (http://economist.com)",
