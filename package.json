@@ -129,11 +129,10 @@
     "@economist/component-icon": "^3.6.4",
     "@economist/component-palette": "^1.2.0",
     "@economist/component-typography": "^1.4.3",
-    "react": "^0.14.0-rc1",
     "react-cookie": "^0.3.4"
   },
   "peerDependencies": {
-    "react": "~0.14.0-rc"
+    "react": "~0.14.0-rc||^0.14.0"
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.4.3",
@@ -157,6 +156,7 @@
     "npm-watch": "0.0.1",
     "parallelshell": "^2.0.0",
     "pre-commit": "^1.0.10",
+    "react": "~0.14.0-rc||^0.14.0",
     "sinon": "^1.17.1",
     "watchify": "^3.4.0"
   },
