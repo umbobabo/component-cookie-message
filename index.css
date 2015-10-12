@@ -23,11 +23,20 @@
    * 1em of useless space surrounding it. */
   height: 2em;
   width: 2em;
+
+  fill: var(--color-beijing);
+}
+
+.cookie-message--close:hover {
+  fill: var(--color-london);
 }
 
 .cookie-message--close-wrapper {
   position: absolute;
   right: var(--grid-gutter-s);
+
+  cursor: pointer;
+
   /* Compensate Icon's white space */
   top: -0.5em;
   right: -0.5em;
