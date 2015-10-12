@@ -9,6 +9,9 @@
 }
 
 .cookie-message {
+  font-family: var(--fontfamily-body);
+  font-size: var(--text-size-step--2);
+  line-height: var(--text-line-height-body-on-step--2);
   padding: var(--grid-spacing-sheep) var(--grid-gutter-s);
   border-bottom: 3px solid var(--color-london);
   background: var(--color-berlin);
