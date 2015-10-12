@@ -32,8 +32,9 @@
   top: -0.5em;
   right: -0.5em;
   /* Fat-finger friendliness */
+  /* padding:1em offsets it to the sides, pull it back in. */
   padding: 1em;
-  margin: -1em;  /* padding:1em offsets it to the sides, pull it back in. */
+  margin: -1em;
 }
 
 .cookie-message--message-container {
