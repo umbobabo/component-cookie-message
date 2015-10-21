@@ -131,9 +131,6 @@
     "@economist/component-typography": "^1.4.3",
     "react-cookie": "^0.3.4"
   },
-  "peerDependencies": {
-    "react": "^0.14.0"
-  },
   "devDependencies": {
     "@economist/component-devpack": "^3.4.3",
     "babel": "^5.8.23",
@@ -159,6 +156,9 @@
     "react": "^0.14.0",
     "sinon": "^1.17.1",
     "watchify": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0"
   },
   "pre-commit": [
     "lint"
