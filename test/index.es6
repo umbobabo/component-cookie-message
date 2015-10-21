@@ -3,7 +3,7 @@ import CookieMessage from '../index.es6';
 import reactCookie from 'react-cookie';
 import { stub, spy } from 'sinon';
 
-describe('Teaser component', () => {
+describe('CookieMessage component', () => {
   it('is compatible with React.Component', () => {
     CookieMessage.should.be.a('function').and.respondTo('render');
   });
