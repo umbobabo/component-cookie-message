@@ -75,6 +75,7 @@ export default class CookieMessage extends React.Component {
         <div className="cookie-message--message-container">
           <span onClick={() => this.onCloseClick()}
             className="cookie-message--close-wrapper"
+            tabIndex=0
           >
             <Icon icon="close" className="cookie-message--close" />
           </span>
