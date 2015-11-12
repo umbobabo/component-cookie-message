@@ -1,0 +1,63 @@
+@import "@economist/component-typography";
+@import "@economist/component-palette";
+@import "@economist/component-grid";
+
+.cookie-message--link, .cookie-message--link:visited {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-london);
+}
+
+.cookie-message {
+  font-family: var(--fontfamily-body);
+  font-size: var(--text-size-step--2);
+  line-height: var(--text-line-height-body-on-step--2);
+  padding: var(--grid-spacing-sheep) var(--grid-gutter-s);
+  border-bottom: 3px solid var(--color-london);
+  background: var(--color-berlin);
+}
+
+.cookie-message--close {
+  /* Not magic numbers.
+   * The icon is supposed to have 1em of height, but it currently has
+   * 1em of useless space surrounding it. */
+  height: 2em;
+  width: 2em;
+
+  fill: var(--color-beijing);
+}
+
+.cookie-message--close:hover {
+  fill: var(--color-london);
+}
+
+.cookie-message--close-wrapper {
+  position: absolute;
+  right: var(--grid-gutter-s);
+
+  cursor: pointer;
+
+  /* Compensate Icon's white space */
+  top: -0.5em;
+  right: -0.5em;
+  /* Fat-finger friendliness */
+  /* padding:1em offsets it to the sides, pull it back in. */
+  padding: 1em;
+  margin: -1em;
+}
+
+.cookie-message--message-container {
+  position: relative;
+  padding-right: var(--grid-spacing-sheep);
+  max-width: var(--cookie-message-max-width, 900px);
+  margin: auto;
+}
+
+.cookie-message__link--temporary-cookie-preferences { display: none; }
+.cookie-message--link__preferences :only-of-type { display: inline; }
+
+@media screen and (max-width: 820px) {
+  .cookie-message--message-container br {
+    display: none;
+  }
+}
