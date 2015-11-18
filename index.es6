@@ -62,11 +62,11 @@ export default class CookieMessage extends React.Component {
       <span id="teconsent-preferences"
         className="cookie-message--link__preferences cookie-message--link"
       >
-        <a href="http://www.allaboutcookies.org/manage-cookies/"
+        <a href="//www.economist.com/cookies-info"
           className="cookie-message--link
           cookie-message__link--temporary-cookie-preferences"
         >
-          Cookie preferences
+          cookies preferences
         </a>
       </span>
     );
@@ -75,6 +75,7 @@ export default class CookieMessage extends React.Component {
         <div className="cookie-message--message-container">
           <span onClick={() => this.onCloseClick()}
             className="cookie-message--close-wrapper"
+            tabIndex=0
           >
             <Icon icon="close" className="cookie-message--close" />
           </span>
