@@ -1,10 +1,6 @@
 {
   "name": "@economist/component-cookie-message",
-<<<<<<< HEAD
-  "version": "1.0.1",
-=======
-  "version": "1.0.3",
->>>>>>> 7c81c180c239aeb2fa6fdcb0d26eb757585151fd
+  "version": "1.0.4",
   "description": "Reusable cookie message component",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
