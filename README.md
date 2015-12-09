@@ -10,3 +10,8 @@ will clear it:
 ```javascript
 document.cookie='ec_cookie_message_0'+'=;Max-Age=0'
 ```
+
+## Accepted CSS variables:
+
+ - `--cookiemessage-vertical-padding`
+ - `--cookiemessage-horizontal-padding`
