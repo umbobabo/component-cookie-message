@@ -30,6 +30,7 @@ export default class CookieMessage extends React.Component {
         expires: new Date('01-01-2040'),
         secure: isHttps,
         httpOnly: false,
+        path: '/',
       };
       cookie.save(this.props.cookieName, '1', cookieOptions);
     }
