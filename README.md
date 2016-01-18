@@ -15,3 +15,5 @@ document.cookie='ec_cookie_message_0'+'=;Max-Age=0'
 
  - `--cookiemessage-vertical-padding`
  - `--cookiemessage-horizontal-padding`
+ - `--cookiemessage-min-height`
+ - `--cookiemessage-link-hover`
