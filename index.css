@@ -13,7 +13,10 @@
   font-size: var(--text-size-step--2);
   line-height: var(--text-line-height-body-on-step--2);
   padding: var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep)) var(--cookiemessage-horizontal-padding, var(--grid-gutter-s));
+  box-sizing: border-box;
+  min-height: var(--cookiemessage-min-height, 64px);
   background: var(--color-berlin);
+  overflow: hidden;
 }
 
 .cookie-message--close {
@@ -24,10 +27,6 @@
   width: 2em;
 
   fill: var(--color-beijing);
-}
-
-.cookie-message--close:hover {
-  fill: var(--color-london);
 }
 
 .cookie-message--close-wrapper {
@@ -47,16 +46,31 @@
 
 .cookie-message--message-container {
   position: relative;
-  padding-right: var(--grid-spacing-sheep);
-  max-width: var(--cookie-message-max-width, 900px);
-  margin: auto;
+  padding-right: var(--grid-spacing-donkey);
+}
+
+@media screen and (min-width: 1024px) {
+  .cookie-message--message-container {
+    /* Vertically align the cookie message. */
+    top: 0.5em;
+    top: calc(
+      var(--cookiemessage-min-height, 64px) / 2 -
+      var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep)) -
+      0.5em *
+      var(--text-line-height-body-on-step--2)
+    );
+  }
 }
 
 .cookie-message__link--temporary-cookie-preferences { display: none; }
 .cookie-message--link__preferences :only-of-type { display: inline; }
 
-@media screen and (max-width: 820px) {
-  .cookie-message--message-container br {
-    display: none;
-  }
+.cookie-message--link:hover {
+  color: var(--cookiemessage-link-hover, var(--color-chicago));
+  border-bottom: none;
 }
+
+.cookie-message--close-wrapper:hover .cookie-message--close {
+  fill: var(--cookiemessage-link-hover, var(--color-chicago));
+}
+

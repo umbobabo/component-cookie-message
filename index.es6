@@ -81,7 +81,7 @@ export default class CookieMessage extends React.Component {
             <Icon icon="close" className="cookie-message--close" />
           </span>
           By continuing to browse this site you are agreeing to our use of cookies.
-          Review our <br/>{policyLink} for details or change your {preferencesLink}.
+          Review our {policyLink} for details or change your {preferencesLink}.
         </div>
       </div>
     );
