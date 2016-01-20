@@ -9,9 +9,9 @@
 }
 
 .cookie-message {
-  font-family: var(--fontfamily-body);
+  font-family: var(--fontfamily-sans);
   font-size: var(--text-size-step--2);
-  line-height: var(--text-line-height-body-on-step--2);
+  line-height: var(--text-line-height-sans-on-step--2);
   padding: var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep)) var(--cookiemessage-horizontal-padding, var(--grid-gutter-s));
   box-sizing: border-box;
   min-height: var(--cookiemessage-min-height, 64px);
@@ -57,7 +57,7 @@
       var(--cookiemessage-min-height, 64px) / 2 -
       var(--cookiemessage-vertical-padding, var(--grid-spacing-sheep)) -
       0.5em *
-      var(--text-line-height-body-on-step--2)
+      var(--text-line-height-sans-on-step--2)
     );
   }
 }
