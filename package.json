@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-cookie-message",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Reusable cookie message component",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
@@ -129,7 +129,7 @@
     "@economist/component-grid": "^1.3.0",
     "@economist/component-icon": "^5.2.1",
     "@economist/component-palette": "^1.4.2",
-    "@economist/component-typography": "^2.0.0",
+    "@economist/component-typography": "^3.1.1",
     "react-cookie": "^0.3.4"
   },
   "devDependencies": {
